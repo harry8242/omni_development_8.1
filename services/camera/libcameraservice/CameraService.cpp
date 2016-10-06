@@ -744,7 +744,7 @@ int32_t CameraService::mapToInterface(StatusInternal status) {
 Status CameraService::initializeShimMetadata(int cameraId) {
     int uid = getCallingUid();
 
-    String16 internalPackageName("cameraserver");
+    String16 internalPackageName("media");
     String8 id = String8::format("%d", cameraId);
     Status ret = Status::ok();
     sp<Client> tmp = nullptr;
@@ -825,7 +825,6 @@ Status CameraService::getLegacyParametersLazy(int cameraId,
 static bool isTrustedCallingUid(uid_t uid) {
     switch (uid) {
         case AID_MEDIA:        // mediaserver
-        case AID_CAMERASERVER: // cameraserver
         case AID_RADIO:        // telephony
             return true;
         default:

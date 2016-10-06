@@ -25,6 +25,8 @@
 #include "RegisterExtensions.h"
 
 // from LOCAL_C_INCLUDES
+#include "CameraService.h"
+#include <hidl/HidlTransportSupport.h>
 #include "IcuUtils.h"
 #include "MediaPlayerService.h"
 #include "ResourceManagerService.h"
@@ -35,12 +37,16 @@ int main(int argc __unused, char **argv __unused)
 {
     signal(SIGPIPE, SIG_IGN);
 
+    // Set 3 threads for HIDL calls
+    hardware::configureRpcThreadpool(3, /*willjoin*/ false);
+
     sp<ProcessState> proc(ProcessState::self());
     sp<IServiceManager> sm(defaultServiceManager());
     ALOGI("ServiceManager: %p", sm.get());
     InitializeIcuOrDie();
     MediaPlayerService::instantiate();
     ResourceManagerService::instantiate();
+    CameraService::instantiate();
     registerExtensions();
     ProcessState::self()->startThreadPool();
     IPCThreadState::self()->joinThreadPool();
