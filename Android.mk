@@ -1,4 +1,4 @@
-ifeq ($(call my-dir),$(call project-path-for,wlan))
+ifeq ($(filter bat,$(TARGET_DEVICE)),)
 
 include $(call all-subdir-makefiles)
 
