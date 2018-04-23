@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote name="harry8242"
+          fetch="https://github.com/harry8242" />
+  <remote name="aex"
+          fetch="https://github.com/AospExtended" />
+
+
+  <!-- Remove Omni specific stuff -->
+  <remove-project name="android_frameworks_av" />
+  <remove-project name="android_frameworks_base" />
+  <remove-project name="android_packages_apps_Settings" />
+  <remove-project name="android_hardware_qcom_bt" />
+  <remove-project name="android_hardware_qcom_wlan" />
+
+  <!-- Remove telephony related repos -->
+  <remove-project name="android_frameworks_opt_telephony" />
+  <remove-project name="android_frameworks_opt_net_ims" />
+  <remove-project name="android_packages_services_Telephony" />
+  <remove-project name="android_packages_services_Telecomm" />
+  <remove-project name="android_packages_apps_PhoneCommon" />
+  <remove-project name="android_vendor_codeaurora_telephony" />
+
+  <!--  Add Telephony repos -->
+  <project path="frameworks/opt/net/ims" name="platform/frameworks/opt/net/ims" groups="frameworks_ims,pdk-cw-fs,pdk-fs" />
+  <project path="packages/apps/PhoneCommon" name="platform/packages/apps/PhoneCommon" groups="pdk-cw-fs,pdk-fs" />
+
+  <project path="frameworks/opt/telephony" name="omni_development_8.1" remote="harry8242" revision="frameworks_opt_telephony" />
+  <project path="packages/services/Telephony" name="omni_development_8.1" remote="harry8242" revision="packages_services_Telephony" />
+  <project path="packages/services/Telecomm" name="omni_development_8.1" remote="harry8242" revision="packages_services_Telecomm" />
+  <project path="vendor/codeaurora/telephony" name="platform_vendor_codeaurora_telephony" remote="aex" revision="8.1.x" />
+
+  <!-- Additions -->
+  <project path="frameworks/av" name="omni_development_8.1" remote="harry8242" revision="frameworks_av" />
+  <project path="frameworks/base" name="android_frameworks_base" remote="harry8242" revision="android-8.1" />
+  <project path="packages/apps/Settings" name="omni_development_8.1" remote="harry8242" revision="packages_apps_Settings" />
+  <project path="hardware/qcom/bt" name="omni_development_8.1" remote="harry8242" revision="hardware_qcom_bt" />
+  <project path="hardware/qcom/wlan" name="omni_development_8.1" remote="harry8242" revision="hardware_qcom_wlan" />
+  <project path="external/connectivity" name="GZOSP/external_connectivity" remote="github" revision="8.1" />
+  <project path="vendor/qcom/opensource/dataservices" name="omnirom/vendor_qcom_opensource_dataservices" remote="github"
+revision="android-8.1" />
+  <project path="packages/apps/FMRadio" name="omnirom/android_packages_apps_FMRadio" remote="github" revision="android-8.0" />
+  <project path="hardware/qcom/fm" name="omnirom/android_hardware_qcom_fm" remote="github" revision="android-8.1" />
+
+  <!-- Clone HALS -->
+  <project path="hardware/qcom/audio-caf-msm8916" name="omni_development_8.1" remote="harry8242" revision="audio-caf-msm8916" />
+  <project path="hardware/qcom/display-caf-msm8916" name="omni_development_8.1" remote="harry8242" revision="display-caf-msm8916" />
+  <project path="hardware/qcom/media-caf-msm8916" name="omni_development_8.1" remote="harry8242" revision="media-caf-msm8916" />
+
+</manifest>
+
