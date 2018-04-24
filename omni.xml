@@ -21,6 +21,7 @@
   <remove-project name="android_packages_services_Telecomm" />
   <remove-project name="android_packages_apps_PhoneCommon" />
   <remove-project name="android_vendor_codeaurora_telephony" />
+  <remove-project name="android_vendor_omni" />
 
   <!--  Add Telephony repos -->
   <project path="frameworks/opt/net/ims" name="platform/frameworks/opt/net/ims" groups="frameworks_ims,pdk-cw-fs,pdk-fs" />
@@ -30,6 +31,8 @@
   <project path="packages/services/Telephony" name="omni_development_8.1" remote="harry8242" revision="packages_services_Telephony" />
   <project path="packages/services/Telecomm" name="omni_development_8.1" remote="harry8242" revision="packages_services_Telecomm" />
   <project path="vendor/codeaurora/telephony" name="platform_vendor_codeaurora_telephony" remote="aex" revision="8.1.x" />
+  <project path="vendor/omni" name="android_vendor_omni" remote="harry8242" revision="android-8.1" />
+
 
   <!-- Additions -->
   <project path="frameworks/av" name="omni_development_8.1" remote="harry8242" revision="frameworks_av" />
