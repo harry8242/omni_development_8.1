@@ -97,6 +97,7 @@ $(SOONG_VARIABLES): FORCE
 	echo '    "TargetHeaderPath": "$(TARGET_SPECIFIC_HEADER_PATH)",';  \
         echo ''; \
 	echo '    "LegacyCam": $(if $(TARGET_HAS_LEGACY_CAMERA),false,true)'; \
+	echo '    "HasLegacyCamHal1": $(if $(TARGET_HAS_LEGACY_CAMERA_HAL1),true,false)'; \
 	echo '}') > $(SOONG_VARIABLES_TMP); \
 	if ! cmp -s $(SOONG_VARIABLES_TMP) $(SOONG_VARIABLES); then \
 	  mv $(SOONG_VARIABLES_TMP) $(SOONG_VARIABLES); \
