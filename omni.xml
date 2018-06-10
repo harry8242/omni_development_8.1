@@ -45,6 +45,7 @@
 revision="android-8.1" />
   <project path="packages/apps/FMRadio" name="omnirom/android_packages_apps_FMRadio" remote="github" revision="android-8.0" />
   <project path="hardware/qcom/fm" name="omnirom/android_hardware_qcom_fm" remote="github" revision="android-8.1" />
+  <project path="device/qcom/sepolicy" name="omnirom/android_device_qcom_caf-sepolicy" remote="github" revision="android-8.1" />
 
   <!-- Clone HALS -->
   <project path="hardware/qcom/audio-caf-msm8916" name="omni_development_8.1" remote="harry8242" revision="audio-caf-msm8916" />
